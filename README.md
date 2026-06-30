@@ -374,8 +374,6 @@ This project is licensed under the **MIT License**. It was built as part of the 
 
 ## ‍ Author
 
-<div align="center">
-
 **Kaviyadharshini**
 
 **Email:** kaviyadharshini.works@gmail.com
