@@ -1,3 +1,4 @@
+
 # Candidate Intelligence Engine
 
 A production-grade candidate data ingestion, normalization, and merging platform built as part of the Eightfold Engineering Intern assignment.
@@ -6,7 +7,19 @@ The system ingests, normalizes, and matches candidate profiles from multiple str
 
 The **Candidate Intelligence Engine** is a production-style AI engineering system that consolidates fragmented candidate information into a single validated canonical profile. It also supports runtime-configurable output projection using JSON/YAML configuration files, enabling dynamic reshaping of the final output without modifying core application logic.
 
----
+# Candidate Intelligence Platform
+
+## 1. Project Overview
+The Candidate Intelligence Platform is a robust, production-grade system designed to ingest, normalize, and merge candidate profiles from diverse sources (such as ATS JSON exports, recruiter CSVs, and PDF/Word resumes). It automatically resolves identity conflicts, tracks the provenance of each data field, and produces structured canonical outputs.
+
+**Real-world use case (HR / recruitment analytics):** In modern recruitment, candidate data is often scattered across multiple platforms (LinkedIn, ATS, email, raw resumes). This platform acts as a central intelligence engine, unifying fragmented profiles into a single "Golden Record." This enables HR teams and recruitment analysts to perform accurate talent analytics, matching, and reporting without dealing with duplicate or conflicting records.
+>>>>>>> 0fd0377 (Removed Placeholders)
+
+## 2. Tech Stack
+* **Python**: Core data processing and pipeline orchestration.
+* **Streamlit**: Interactive user interface for uploading files and viewing conflict resolution.
+* **RapidFuzz**: Fuzzy string matching for robust identity resolution and name similarity.
+* **Pydantic**: Data validation and strict typing for canonical models.
 
 ## Features
 
@@ -153,7 +166,15 @@ source venv/bin/activate
 #### 4. Install Dependencies
 
 ```bash
+## 3. Run Instructions
+To run this project locally, execute the following commands in your terminal:
+
+```bash
+git clone <repo>
+cd Candidate-Intelligence-Platform
+>>>>>>> 0fd0377 (Removed Placeholders)
 pip install -r requirements.txt
+streamlit run app.py
 ```
 
 #### 5. Run the Application
@@ -352,3 +373,34 @@ This project is part of the Eightfold Engineering Intern assignment.
 ## Support
 
 For issues, questions, or contributions, please reach out via the contact information above or open an issue on GitHub.
+=======
+## 4. Output Example
+Below is a mock representation of the generated Golden Record output structure:
+
+```json
+{
+  "candidate_id": "123",
+  "name": "Example Name",
+  "email": "example@gmail.com",
+  "skills": ["Python", "SQL"],
+  "status": "merged"
+}
+```
+
+## 5. Tests
+The platform includes a comprehensive Pytest suite that validates pipeline execution, identity matching logic, and normalization output structures.
+
+To run the test suite:
+```bash
+pytest tests/
+```
+
+## 6. Assumptions
+* **Mock data used**: The system relies on mock candidate data provided in JSON and CSV formats for demonstration purposes.
+* **Email/phone as primary identifiers**: The identity resolution engine assumes that emails and phone numbers are the most reliable indicators of a unique candidate.
+* **Rule-based conflict resolution**: Conflicts between data sources are resolved using predefined priority rules (e.g., ATS JSON data might be prioritized over raw PDF extraction).
+
+## 7. Descoped Features
+* **No real LinkedIn scraping**: The system does not actively scrape live LinkedIn profiles to avoid rate limiting and terms-of-service violations.
+* **No cloud DB**: Data is processed in-memory and projected to JSON outputs; no persistent cloud database (like PostgreSQL or MongoDB) is implemented.
+* **No ML training pipeline**: The system uses deterministic heuristics and fuzzy matching rather than training custom machine learning models for entity extraction.

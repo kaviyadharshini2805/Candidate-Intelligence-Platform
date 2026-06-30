@@ -1,0 +1,7 @@
+{
+  "candidate_id": "123",
+  "name": "Example Name",
+  "email": "example@gmail.com",
+  "skills": ["Python", "SQL"],
+  "status": "merged"
+}
