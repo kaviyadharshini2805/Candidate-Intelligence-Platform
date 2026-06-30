@@ -329,11 +329,7 @@ The following features were intentionally not implemented in this version:
 
 ## Live Demo
 
-Try the live application here:
-```
-
-[![Application link here](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://candidate-intelligence-platform-nth6plavdpzorspnfpyxtr.streamlit.app/)
-```
+[![Try the live application here](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://candidate-intelligence-platform-nth6plavdpzorspnfpyxtr.streamlit.app/)
 
 ---
 
