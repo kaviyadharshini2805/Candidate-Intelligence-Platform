@@ -15,17 +15,10 @@
 [![PyTest](https://img.shields.io/badge/PyTest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](#-license)
 
-[![GitHub stars](https://img.shields.io/github/stars/kaviyadharshini2805/Candidate-Intelligence-Platform?style=social)](https://github.com/kaviyadharshini2805/Candidate-Intelligence-Platform/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/kaviyadharshini2805/Candidate-Intelligence-Platform?style=social)](https://github.com/kaviyadharshini2805/Candidate-Intelligence-Platform/network/members)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Kaviyadharshini-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kaviyadharshini-works)
 
 **[Live Demo](https://candidate-intelligence-platform-nth6plavdpzorspnfpyxtr.streamlit.app/)** · **[Report Bug](https://github.com/kaviyadharshini2805/Candidate-Intelligence-Platform/issues)** · **[Request Feature](https://github.com/kaviyadharshini2805/Candidate-Intelligence-Platform/issues)**
 
 </div>
-
-<p align="center">
-  <img src="assets/banner.png" alt="Candidate Intelligence Platform banner" width="100%" />
-</p>
 
 ---
 
