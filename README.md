@@ -394,16 +394,3 @@ This project is licensed under the **MIT License**. It was built as part of the 
 
 ---
 
-<details>
-<summary><b> Recommended assets to add</b></summary>
-
-| Filename | Dimensions | Purpose | Recommended Source |
-|---|---|---|---|
-| `assets/banner.png` | 1280×400 | Hero banner at top of README | Unsplash, Storyset |
-| `assets/dashboard.png` | 1600×900 | Dashboard home screenshot | Your own app screenshot |
-| `assets/upload.png` | 1600×900 | File upload flow screenshot | Your own app screenshot |
-| `assets/provenance.png` | 1600×900 | Provenance/confidence view screenshot | Your own app screenshot |
-| `assets/output.png` | 1600×900 | Final JSON output screenshot | Your own app screenshot |
-| `assets/icon-pipeline.svg` | 64×64 | Small icon used in section headers | Icons8 |
-
-</details>
