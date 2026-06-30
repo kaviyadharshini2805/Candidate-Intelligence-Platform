@@ -123,7 +123,6 @@ with left:
             "Paste recruiter notes or resume text",
             value="",
             height=180,
-            placeholder="Name: ...\nEmail: ...\nSkills: ...\nExperience:\n  Company - Role | Dates",
             key="notes_input",
         )
 
