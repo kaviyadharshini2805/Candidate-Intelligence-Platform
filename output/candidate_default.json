@@ -1,186 +1,254 @@
 [
   {
-    "candidate_id": "f2b94551-6505-4958-993d-2e08c2fc845d",
-    "full_name": "Kaviyadharshini M",
+    "candidate_id": "060086ff-8795-4c9f-ae25-71aada4ff3a0",
+    "full_name": "Aarav Sharma",
     "emails": [
-      "kaviyadharshini.works@gmail.com"
+      "aarav.sharma@gmail.com"
     ],
     "phones": [
-      "+918270849088"
+      "+919876543210"
     ],
     "location": [
+      "Bengaluru",
       null,
-      null,
-      null
+      "IN"
     ],
     "links": {
-      "linkedin": "https://www.linkedin.com/in/kaviyadharshini-works",
-      "github": "https://github.com/kaviyadharshini2805",
+      "linkedin": null,
+      "github": null,
       "portfolio": null,
       "other": []
     },
-    "headline": null,
+    "headline": "Software Engineer with 4+ years of experience in backend development, scalable systems, cloud computing, and AI-powered applications. Technical Skills Python, Java, C++, JavaScript, FastAPI, Flask, Django, React, PostgreSQL, MongoDB, AWS, GCP, Docker, Kubernetes, TensorFlow, Pandas, NumPy Professional Experience Google — Software Engineer (Jul 2023–Present) Designed scalable backend microservices, worked on AI infrastructure, mentored engineers. Infosys — Software Engineer (Jul 2021–Jun 2023) Built REST APIs with FastAPI, optimized PostgreSQL queries, integrated Redis caching.",
     "years_experience": null,
     "skills": [
       {
-        "name": "JavaScript",
+        "name": "NLP",
         "confidence": 0.6,
         "sources": [
-          "recruiter_notes.txt"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
-        "name": "Data Science",
+        "name": "Kubernetes",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
-        "name": "Machine Learning",
+        "name": "Docker",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
-        "name": "PostgreSQL",
+        "name": "MongoDB",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
-        "name": "Python",
+        "name": "FastAPI",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
-        ]
-      },
-      {
-        "name": "CSS",
-        "confidence": 0.6,
-        "sources": [
-          "recruiter_notes.txt"
-        ]
-      },
-      {
-        "name": "Git",
-        "confidence": 0.6,
-        "sources": [
-          "recruiter_notes.txt"
-        ]
-      },
-      {
-        "name": "HTML",
-        "confidence": 0.6,
-        "sources": [
-          "recruiter_notes.txt"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
         "name": "Pandas",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "TensorFlow",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "Redis",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "React",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "Python",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "PostgreSQL",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "C++",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "Flask",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
         "name": "NumPy",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
-        "name": "SQL",
+        "name": "GCP",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
         "name": "Java",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
-        ]
-      },
-      {
-        "name": "MySQL",
-        "confidence": 0.6,
-        "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
-        ]
-      },
-      {
-        "name": "Computer Vision",
-        "confidence": 0.6,
-        "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
         ]
       },
       {
         "name": "AWS",
         "confidence": 0.6,
         "sources": [
-          "KAVIYADHARSHINI M - SE.pdf"
+          "Aarav_Sharma_Resume.pdf"
+        ]
+      },
+      {
+        "name": "Django",
+        "confidence": 0.6,
+        "sources": [
+          "Aarav_Sharma_Resume.pdf"
         ]
       }
     ],
-    "experience": [],
+    "experience": [
+      {
+        "company": "Google — Software Engineer (Jul 2023–Present)",
+        "title": "Unknown Title",
+        "start": null,
+        "end": null,
+        "summary": "Designed scalable backend microservices, worked on AI infrastructure, mentored engineers. Infosys — Software Engineer (Jul 2021–Jun 2023) Built REST APIs with FastAPI, optimized PostgreSQL queries, integrated Redis caching."
+      }
+    ],
     "education": [
       {
-        "institution": "Higher Secondary School 2022 – 2023",
-        "degree": "B.E",
-        "field": "Computer Science and Engineering",
-        "end_year": 2023
+        "institution": "Unknown Institution",
+        "degree": "B.Tech",
+        "field": "Computer Science and Engineeri",
+        "end_year": 2021
       }
     ],
     "provenance": [
       {
         "field": "full_name",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
-        "decision_reason": "Single source populated",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "headline",
+        "source": "Aarav_Sharma_Resume.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
         "match_type": null,
         "confidence_score": null
       },
       {
         "field": "emails",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
-        "decision_reason": "Recency tie-breaker (incoming newer)",
+        "decision_reason": null,
         "match_type": null,
         "confidence_score": null
       },
       {
         "field": "phones",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
-        "decision_reason": "Recency tie-breaker (incoming newer)",
+        "decision_reason": null,
         "match_type": null,
         "confidence_score": null
       },
       {
-        "field": "links.linkedin",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "field": "location.city",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
-        "decision_reason": "Single source populated",
+        "decision_reason": null,
         "match_type": null,
         "confidence_score": null
       },
       {
-        "field": "links.github",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "field": "location.country",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
-        "decision_reason": "Single source populated",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "experience.company",
+        "source": "Aarav_Sharma_Resume.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "experience.title",
+        "source": "Aarav_Sharma_Resume.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "experience.summary",
+        "source": "Aarav_Sharma_Resume.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
         "match_type": null,
         "confidence_score": null
       },
       {
         "field": "education.institution",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
         "decision_reason": null,
         "match_type": null,
@@ -188,7 +256,7 @@
       },
       {
         "field": "education.degree",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
         "decision_reason": null,
         "match_type": null,
@@ -196,7 +264,7 @@
       },
       {
         "field": "education.field",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
         "decision_reason": null,
         "match_type": null,
@@ -204,7 +272,7 @@
       },
       {
         "field": "education.end_year",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
         "decision_reason": null,
         "match_type": null,
@@ -212,84 +280,68 @@
       },
       {
         "field": "skills",
-        "source": "recruiter_notes.txt",
+        "source": "Aarav_Sharma_Resume.pdf",
         "method": "regex_heuristics",
-        "decision_reason": "Initial profile value",
-        "match_type": null,
-        "confidence_score": null
-      },
-      {
-        "field": "skills",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
-        "method": "regex_heuristics",
-        "decision_reason": "Recency tie-breaker (incoming newer)",
-        "match_type": null,
-        "confidence_score": null
-      },
-      {
-        "field": "skills",
-        "source": "KAVIYADHARSHINI M - SE.pdf",
-        "method": "regex_heuristics",
-        "decision_reason": "Single source populated",
+        "decision_reason": null,
         "match_type": null,
         "confidence_score": null
       }
     ],
     "overall_confidence": 0.6,
     "validation_warnings": [],
-    "data_quality_score": 0.75,
+    "data_quality_score": 0.9,
     "merge_conflicts": [],
     "parse_diagnostics": [
       {
-        "source_name": "recruiter_notes.txt",
-        "content_type": "txt",
-        "parse_time_ms": 7.0,
-        "emails_found": 1,
-        "phones_found": 1,
-        "skills_found": 11,
+        "source_name": "sample_data.json",
+        "content_type": "json",
+        "parse_time_ms": 2.65,
+        "emails_found": 0,
+        "phones_found": 0,
+        "skills_found": 0,
         "experience_count": 0,
-        "education_count": 0,
+        "education_count": 1,
         "links_found": 0,
         "has_name": false,
         "has_headline": false,
         "sections_found": [
-          "emails",
-          "phones",
-          "skills"
+          "education"
         ],
         "sections_missing": [
           "name",
+          "emails",
+          "phones",
+          "skills",
           "experience",
-          "education",
           "links",
           "headline"
         ],
-        "parser_confidence": 0.6,
+        "parser_confidence": 1.0,
         "error": null
       },
       {
-        "source_name": "KAVIYADHARSHINI M - SE.pdf",
+        "source_name": "Aarav_Sharma_Resume.pdf",
         "content_type": "pdf",
-        "parse_time_ms": 315.04,
+        "parse_time_ms": 66.62,
         "emails_found": 1,
         "phones_found": 1,
-        "skills_found": 11,
-        "experience_count": 0,
+        "skills_found": 19,
+        "experience_count": 1,
         "education_count": 1,
-        "links_found": 2,
+        "links_found": 0,
         "has_name": true,
-        "has_headline": false,
+        "has_headline": true,
         "sections_found": [
           "emails",
           "phones",
           "skills",
+          "experience",
           "education",
-          "links"
+          "headline"
         ],
         "sections_missing": [
           "name",
-          "experience",
-          "headline"
+          "links"
         ],
         "parser_confidence": 0.6,
         "error": null

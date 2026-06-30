@@ -41,9 +41,16 @@ class JSONParser(BaseParser):
             data = content
 
         # Support nested "profile" or root
-        profile = data.get("profile", data) if isinstance(data, dict) else {}
-        if not isinstance(profile, dict):
-            profile = {}
+        raw_profile = data.get("profile", data) if isinstance(data, dict) else {}
+        if not isinstance(raw_profile, dict):
+            raw_profile = {}
+            
+        profile = {}
+        for k, v in raw_profile.items():
+            if isinstance(k, str):
+                profile[k.lower()] = v
+            else:
+                profile[k] = v
 
         # 1. Full Name
         result["full_name"] = profile.get("name") or profile.get("candidate_name") or profile.get("full_name")
@@ -63,15 +70,32 @@ class JSONParser(BaseParser):
             result["phones"].extend([p for p in phones if isinstance(p, str)])
 
         # 4. Location (nested city/region/country)
-        loc = profile.get("location") or {}
-        if isinstance(loc, dict):
+        raw_loc = profile.get("location") or {}
+        if isinstance(raw_loc, dict):
+            loc = {k.lower(): v for k, v in raw_loc.items() if isinstance(k, str)}
             result["location"] = [
                 loc.get("city") or loc.get("town"),
-                loc.get("region") or loc.get("state"),
-                loc.get("country")
+                loc.get("region") or loc.get("state") or loc.get("province"),
+                loc.get("country") or loc.get("country_code")
             ]
-        elif isinstance(loc, list) and len(loc) >= 3:
-            result["location"] = loc[:3]
+        elif isinstance(raw_loc, list) and len(raw_loc) >= 3:
+            result["location"] = raw_loc[:3]
+        elif isinstance(raw_loc, str):
+            parts = [p.strip() for p in raw_loc.split(',')]
+            known_cities = {"chennai": "IN", "bengaluru": "IN", "bangalore": "IN", "hyderabad": "IN", "pune": "IN", "mumbai": "IN", "delhi": "IN", "san francisco": "US", "new york": "US", "london": "GB"}
+            city = parts[0]
+            region, country = None, None
+            if len(parts) >= 3:
+                region, country = parts[1], parts[2]
+            elif len(parts) == 2:
+                c_lower = parts[1].lower()
+                if len(c_lower) == 2 or c_lower in ["india", "usa", "united states", "uk", "united kingdom", "us", "in", "gb"]:
+                    country = parts[1]
+                else:
+                    region, country = parts[1], known_cities.get(city.lower())
+            else:
+                country = known_cities.get(city.lower())
+            result["location"] = [city, region, country]
 
         # 5. Links
         links = profile.get("links") or {}

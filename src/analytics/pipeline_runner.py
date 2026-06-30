@@ -234,6 +234,12 @@ class PipelineRunner:
         logger.log_event("pipeline", "Effective priorities", effective_priorities)
 
         # ── Stage 1: Adapter + Parser + Normalizer per source ────────────────
+        try:
+            with open("debug_uploads/did_run.txt", "w") as f:
+                f.write("PipelineRunner.run() executed!")
+        except Exception:
+            pass
+
         for src in sources:
             stage_start = time.perf_counter()
             try:
@@ -555,6 +561,12 @@ class PipelineRunner:
             tmp.write(src.raw_bytes or b"")
             tmp_path = tmp.name
         tmp_files.append(tmp_path)
+        
+        try:
+            with open(f"debug_uploads/{src.name}", "wb") as f:
+                f.write(src.raw_bytes or b"")
+        except Exception:
+            pass
 
         if src.content_type == "csv":
             adapter = CSVAdapter(tmp_path)

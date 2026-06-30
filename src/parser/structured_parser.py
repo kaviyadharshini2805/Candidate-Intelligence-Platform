@@ -30,7 +30,13 @@ class StructuredParser(BaseParser):
 
         if payload.content_type == "csv":
             # If CSV, we expect a single candidate row dict
-            row = content if isinstance(content, dict) else (content[0] if isinstance(content, list) and len(content) > 0 else {})
+            raw_row = content if isinstance(content, dict) else (content[0] if isinstance(content, list) and len(content) > 0 else {})
+            row = {}
+            for k, v in raw_row.items():
+                if isinstance(k, str):
+                    row[k.lower()] = v
+                else:
+                    row[k] = v
             
             result["full_name"] = row.get("name") or row.get("full_name")
             if row.get("email"):
@@ -49,9 +55,34 @@ class StructuredParser(BaseParser):
                     "summary": "Imported from recruiter CSV export."
                 })
                 
+            if row.get("location"):
+                loc_str = str(row.get("location"))
+                parts = [p.strip() for p in loc_str.split(',')]
+                known_cities = {"chennai": "IN", "bengaluru": "IN", "bangalore": "IN", "hyderabad": "IN", "pune": "IN", "mumbai": "IN", "delhi": "IN", "san francisco": "US", "new york": "US", "london": "GB"}
+                city = parts[0]
+                region, country = None, None
+                if len(parts) >= 3:
+                    region, country = parts[1], parts[2]
+                elif len(parts) == 2:
+                    c_lower = parts[1].lower()
+                    if len(c_lower) == 2 or c_lower in ["india", "usa", "united states", "uk", "united kingdom", "us", "in", "gb"]:
+                        country = parts[1]
+                    else:
+                        region, country = parts[1], known_cities.get(city.lower())
+                else:
+                    country = known_cities.get(city.lower())
+                result["location"] = [city, region, country]
+                
         elif payload.content_type == "json":
             # If JSON, we support custom mapping for typical ATS structures
-            data = content.get("profile", content) if isinstance(content, dict) else {}
+            raw_data = content.get("profile", content) if isinstance(content, dict) else {}
+            # Lowercase all keys for robust extraction
+            data = {}
+            for k, v in raw_data.items():
+                if isinstance(k, str):
+                    data[k.lower()] = v
+                else:
+                    data[k] = v
             
             result["full_name"] = data.get("name") or data.get("candidate_name") or data.get("full_name")
             
@@ -74,15 +105,32 @@ class StructuredParser(BaseParser):
                 result["phones"].append(data.get("phone"))
                 
             # Map location
-            loc = data.get("location") or {}
-            if isinstance(loc, dict):
+            raw_loc = data.get("location") or {}
+            if isinstance(raw_loc, dict):
+                loc = {k.lower(): v for k, v in raw_loc.items() if isinstance(k, str)}
                 result["location"] = [
                     loc.get("city") or loc.get("town"),
                     loc.get("region") or loc.get("state") or loc.get("province"),
                     loc.get("country") or loc.get("country_code")
                 ]
-            elif isinstance(loc, list) and len(loc) == 3:
-                result["location"] = loc
+            elif isinstance(raw_loc, list) and len(raw_loc) == 3:
+                result["location"] = raw_loc
+            elif isinstance(raw_loc, str):
+                parts = [p.strip() for p in raw_loc.split(',')]
+                known_cities = {"chennai": "IN", "bengaluru": "IN", "bangalore": "IN", "hyderabad": "IN", "pune": "IN", "mumbai": "IN", "delhi": "IN", "san francisco": "US", "new york": "US", "london": "GB"}
+                city = parts[0]
+                region, country = None, None
+                if len(parts) >= 3:
+                    region, country = parts[1], parts[2]
+                elif len(parts) == 2:
+                    c_lower = parts[1].lower()
+                    if len(c_lower) == 2 or c_lower in ["india", "usa", "united states", "uk", "united kingdom", "us", "in", "gb"]:
+                        country = parts[1]
+                    else:
+                        region, country = parts[1], known_cities.get(city.lower())
+                else:
+                    country = known_cities.get(city.lower())
+                result["location"] = [city, region, country]
 
             # Map links
             links = data.get("links") or data.get("social_links") or []

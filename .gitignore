@@ -1,35 +1,69 @@
+# ==========================
 # Python
+# ==========================
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 
-# Virtual Environment
+# ==========================
+# Virtual Environments
+# ==========================
 venv/
 .venv/
 env/
 
+# ==========================
 # Environment Variables
+# ==========================
 .env
+.env.*
 
-# IDE
+# ==========================
+# IDEs
+# ==========================
 .vscode/
 .idea/
 
+# ==========================
 # OS Files
+# ==========================
 .DS_Store
 Thumbs.db
 
-# Build
+# ==========================
+# Build & Distribution
+# ==========================
 build/
 dist/
 *.egg-info/
 
-# Logs
-*.log
-
-# Python cache
+# ==========================
+# Python Cache
+# ==========================
 .pytest_cache/
 .mypy_cache/
+.coverage
+htmlcov/
 
-# Output (optional)
-output/*.pdf
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# Generated Files
+# ==========================
+output/
+*.pdf
+
+# ==========================
+# Streamlit
+# ==========================
+.streamlit/secrets.toml
+
+# ==========================
+# Misc
+# ==========================
+*.tmp
+*.bak

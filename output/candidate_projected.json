@@ -1,71 +1,59 @@
 {
-  "candidate_name": "Kaviyadharshini M",
-  "primary_email": "kaviyadharshini.works@gmail.com",
-  "phone_e164": "+918270849088",
+  "candidate_name": "Aarav Sharma",
+  "primary_email": "aarav.sharma@gmail.com",
+  "phone_e164": "+919876543210",
   "skills_list": [
-    "JavaScript",
-    "Data Science",
-    "Machine Learning",
-    "PostgreSQL",
-    "Python",
-    "CSS",
-    "Git",
-    "HTML",
+    "NLP",
+    "Kubernetes",
+    "Docker",
+    "MongoDB",
+    "FastAPI",
     "Pandas",
+    "TensorFlow",
+    "Redis",
+    "React",
+    "Python",
+    "PostgreSQL",
+    "C++",
+    "JavaScript",
+    "Flask",
     "NumPy",
-    "SQL",
+    "GCP",
     "Java",
-    "MySQL",
-    "Computer Vision",
-    "AWS"
+    "AWS",
+    "Django"
   ],
   "overall_confidence": 0.6,
   "provenance": [
     {
       "field": "candidate_name",
-      "source": "KAVIYADHARSHINI M - SE.pdf",
+      "source": "Aarav_Sharma_Resume.pdf",
       "method": "regex_heuristics",
-      "decision_reason": "Single source populated",
+      "decision_reason": null,
       "match_type": null,
       "confidence_score": null
     },
     {
       "field": "primary_email",
-      "source": "KAVIYADHARSHINI M - SE.pdf",
+      "source": "Aarav_Sharma_Resume.pdf",
       "method": "regex_heuristics",
-      "decision_reason": "Recency tie-breaker (incoming newer)",
+      "decision_reason": null,
       "match_type": null,
       "confidence_score": null
     },
     {
       "field": "phone_e164",
-      "source": "KAVIYADHARSHINI M - SE.pdf",
+      "source": "Aarav_Sharma_Resume.pdf",
       "method": "regex_heuristics",
-      "decision_reason": "Recency tie-breaker (incoming newer)",
+      "decision_reason": null,
       "match_type": null,
       "confidence_score": null
     },
     {
       "field": "skills_list",
-      "source": "recruiter_notes.txt",
+      "source": "Aarav_Sharma_Resume.pdf",
       "method": "regex_heuristics",
-      "decision_reason": "Initial profile value",
-      "match_type": null,
-      "confidence_score": null
-    },
-    {
-      "field": "skills_list",
-      "source": "KAVIYADHARSHINI M - SE.pdf",
-      "method": "regex_heuristics",
-      "decision_reason": "Recency tie-breaker (incoming newer)",
-      "match_type": null,
-      "confidence_score": null
-    },
-    {
-      "field": "skills_list",
-      "source": "KAVIYADHARSHINI M - SE.pdf",
-      "method": "regex_heuristics",
-      "decision_reason": "Single source populated",
+      "decision_reason": null,
       "match_type": null,
       "confidence_score": null
     }

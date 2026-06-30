@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Intelligence Engine - Technical Design</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        :root {
+            --primary: #4338CA;
+            --primary-light: #EEF2FF;
+            --text-dark: #0F172A;
+            --text-gray: #475569;
+            --bg-dark: #1E1E2F;
+            --border: #E2E8F0;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.25in;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background: #fff;
+            font-size: 10px; /* Reduced base font size */
+            line-height: 1.3;
+            max-height: 10in; /* Strict height limit for 1 page */
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            font-size: 9px;
+            color: var(--text-gray);
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .header-main h2 {
+            color: var(--primary);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 2px 0;
+        }
+
+        .header-main h1 {
+            font-size: 18px;
+            margin: 0;
+            color: var(--text-dark);
+        }
+
+        .candidate-info {
+            text-align: right;
+            font-size: 9px;
+        }
+        
+        .candidate-info strong {
+            font-size: 11px;
+            display: block;
+        }
+
+        .top-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .card {
+            background: var(--primary-light);
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .card h3 {
+            margin: 0 0 4px 0;
+            font-size: 9.5px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-gray);
+            font-size: 9px;
+        }
+
+        .pipeline-banner {
+            background: var(--bg-dark);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .pipeline-step {
+            text-align: center;
+        }
+
+        .pipeline-step .icon {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .pipeline-step .title {
+            font-weight: 700;
+            font-size: 9.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pipeline-step .subtitle {
+            font-size: 8px;
+            color: #94A3B8;
+        }
+
+        .arrow {
+            color: #475569;
+            font-size: 12px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .section-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 12px;
+            background: var(--primary);
+        }
+
+        .code-block {
+            background: var(--bg-dark);
+            color: #E2E8F0;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 8.5px;
+            white-space: pre;
+            margin-bottom: 12px;
+            overflow-x: auto;
+            line-height: 1.3;
+        }
+
+        .code-key { color: #93C5FD; }
+        .code-string { color: #FCD34D; }
+        .code-comment { color: #64748B; font-style: italic; }
+        .code-number { color: #6EE7B7; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 9px;
+        }
+
+        td {
+            padding: 6px 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-key {
+            font-weight: 600;
+            color: var(--text-dark);
+            width: 45%;
+            background: #F8FAFC;
+        }
+
+        .table-val {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .edge-case-box {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .edge-case-box.descoped {
+            border-left-color: #F59E0B;
+        }
+
+        .edge-case-title {
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: var(--text-dark);
+            font-size: 9.5px;
+        }
+
+        .edge-case-desc {
+            font-size: 9px;
+        }
+
+        .footer {
+            margin-top: 16px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-gray);
+            font-size: 9px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-top">
+        <span>Technical Architecture & System Design</span>
+    </div>
+
+    <div class="header-main">
+        <div>
+            <h2>EIGHTFOLD AI ENGINEERING ASSESSMENT — STEP 1</h2>
+            <h1>Candidate Intelligence Engine</h1>
+        </div>
+        <div class="candidate-info">
+            <strong>Kaviyadharshini M</strong>
+            <div>kaviyadharshini.works@gmail.com</div>
+            <div>github.com/kaviyadharshini2805/candidate-intelligence</div>
+        </div>
+    </div>
+
+    <div class="top-cards">
+        <div class="card">
+            <h3>1. DETERMINISTIC CONFLICT RESOLUTION</h3>
+            <p>Algorithmic priority ranking ensures predictable, reproducible merges across 5+ conflicting data sources without LLM hallucination.</p>
+        </div>
+        <div class="card">
+            <h3>2. DECOUPLED PROJECTION ENGINE</h3>
+            <p>The backend logic never dictates the output schema. A runtime JSON config reshapes APIs instantly—zero code redeployments needed.</p>
+        </div>
+        <div class="card">
+            <h3>3. FIELD-LEVEL PROVENANCE</h3>
+            <p>Every single data point tracks its origin, extraction method, and confidence score. Data lineage is never lost during processing.</p>
+        </div>
+    </div>
+
+    <div class="pipeline-banner">
+        <div class="pipeline-step">
+            <div class="icon">📥</div>
+            <div class="title">INGEST</div>
+            <div class="subtitle">Detect & Route</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-step">
+            <div class="icon">🔍</div>
+            <div class="title">EXTRACT</div>
+            <div class="subtitle">Regex & Heuristics</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-step">
+            <div class="icon">⚙️</div>
+            <div class="title">NORMALIZE</div>
+            <div class="subtitle">E.164 / ISO-3166</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-step">
+            <div class="icon">🔄</div>
+            <div class="title">MERGE</div>
+            <div class="subtitle">Priority Engine</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-step">
+            <div class="icon">🔒</div>
+            <div class="title">CANONICAL</div>
+            <div class="subtitle">Immutable State</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-step">
+            <div class="icon">📋</div>
+            <div class="title">PROJECT</div>
+            <div class="subtitle">Runtime Schema</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="pipeline-step">
+            <div class="icon">✅</div>
+            <div class="title">VALIDATE</div>
+            <div class="subtitle">Pydantic Strict</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Left Column -->
+        <div>
+            <h3 class="section-title">CANONICAL SCHEMA & PROVENANCE MAP</h3>
+            <div class="code-block">
+{
+  <span class="code-key">"full_name"</span>: <span class="code-string">"Kaviyadharshini M"</span>,
+  <span class="code-key">"emails"</span>: [<span class="code-string">"kaviyadharshini.works@gmail.com"</span>], <span class="code-comment">// Lowercase</span>
+  <span class="code-key">"phones"</span>: [<span class="code-string">"+918015558894"</span>],               <span class="code-comment">// E.164 Strict</span>
+  <span class="code-key">"skills"</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"Streamlit"</span>],       <span class="code-comment">// Aliases resolved</span>
+  <span class="code-key">"location"</span>: {
+    <span class="code-key">"city"</span>: <span class="code-string">"Coimbatore"</span>, <span class="code-key">"country"</span>: <span class="code-string">"IN"</span> <span class="code-comment">// ISO-3166-a2</span>
+  },
+  <span class="code-key">"overall_confidence"</span>: <span class="code-number">0.825</span>,
+  <span class="code-key">"field_provenance"</span>: {
+    <span class="code-key">"full_name"</span>: {
+      <span class="code-key">"source"</span>: <span class="code-string">"resume.pdf"</span>, <span class="code-key">"method"</span>: <span class="code-string">"regex"</span>,
+      <span class="code-key">"confidence"</span>: <span class="code-number">0.85</span>, <span class="code-key">"timestamp"</span>: <span class="code-string">"2026-06-30T08:50Z"</span>
+    }
+  }
+}</div>
+
+            <h3 class="section-title">MERGE ENGINE POLICY</h3>
+            <table>
+                <tr>
+                    <td class="table-key">Source Priority Weighting</td>
+                    <td class="table-val">Recruiter Notes > ATS JSON > Resume PDF > CSV</td>
+                </tr>
+                <tr>
+                    <td class="table-key">Scalar Strategy (Name/Role)</td>
+                    <td class="table-val">Highest-priority source overwrites</td>
+                </tr>
+                <tr>
+                    <td class="table-key">Array Strategy (Skills/Contact)</td>
+                    <td class="table-val">Deduplicated Union across all sources</td>
+                </tr>
+                <tr>
+                    <td class="table-key">Confidence Scoring</td>
+                    <td class="table-val">Weighted average of individual field metrics</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+            <h3 class="section-title">DECOUPLED PROJECTION LAYER</h3>
+            <p style="margin-top: 0; margin-bottom: 16px; color: var(--text-gray);">
+                A major architectural decision was decoupling the backend data state from the API response. The <strong>ProjectionEngine</strong> dynamically maps the immutable canonical record to client-specific shapes using runtime JSON configs.
+            </p>
+            <table>
+                <tr>
+                    <td class="table-key">Field Mapping (from)</td>
+                    <td class="table-val">Map emails[0] to primary_contact</td>
+                </tr>
+                <tr>
+                    <td class="table-key">Payload Optimization</td>
+                    <td class="table-val">Toggle include_provenance to reduce bytes</td>
+                </tr>
+                <tr>
+                    <td class="table-key">Missing Data Policies</td>
+                    <td class="table-val">null | omit | error</td>
+                </tr>
+                <tr>
+                    <td class="table-key">Schema Enforcement</td>
+                    <td class="table-val">Pydantic v2 validation before serving</td>
+                </tr>
+            </table>
+
+            <h3 class="section-title">ENTERPRISE RESILIENCE (EDGE CASES)</h3>
+            
+            <div class="edge-case-box">
+                <div class="edge-case-title">Open-Ended Date Parsing ("Present" ranges)</div>
+                <div class="edge-case-desc">Candidates often list '2023 - Present' for current degrees. A naive parser mistakenly extracts '2023' as graduation year. We implemented custom tokenization to set end_year to null, preventing false analytics flagging.</div>
+            </div>
+
+            <div class="edge-case-box">
+                <div class="edge-case-title">Anti-Data Bleed (Cross-Candidate Merges)</div>
+                <div class="edge-case-desc">Recruiter CSVs often misalign rows. We implemented a Word-Intersection Matcher. If a CSV attempts to merge "Naveen V" data into "Kaviyadharshini M", the system blocks the merge entirely, quarantining the data.</div>
+            </div>
+
+            <div class="edge-case-box">
+                <div class="edge-case-title">Zero-Width Artifact Sanitation</div>
+                <div class="edge-case-desc">Invisible OCR characters (\u200b) from PDF extraction silently fail standard email validation. The Ingestion layer sanitizes these artifacts at byte-level prior to processing.</div>
+            </div>
+
+            <div class="edge-case-box descoped">
+                <div class="edge-case-title">Descoped: Scanned Images & Rate Limiting</div>
+                <div class="edge-case-desc">Image-only PDFs are flagged gracefully (Tesseract OCR descoped). Live LinkedIn scraping is stubbed to prioritize core deterministic conflict resolution under time constraints.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>System Design Document</div>
+        <div>Candidate Intelligence Engine</div>
+    </div>
+
+</body>
+</html>
