@@ -342,7 +342,7 @@ Produces:
 | Concurrency | Suitable for low-to-moderate batch sizes |
 
 > [!WARNING]
-> The current version processes candidates in-memory without a persistence layer, so it's best suited for demos and moderate batch sizes rather than high-volume production traffic. A database-backed and containerized version is on the roadmap.
+> The current version processes candidates in-memory without a persistence layer, so it's best suited for demos and moderate batch sizes rather than high-volume production traffic. 
 
 ---
 
