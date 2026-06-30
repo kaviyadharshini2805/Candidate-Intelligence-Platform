@@ -1,116 +1,302 @@
 # Multi-Source Candidate Data Transformer
 
-A production-grade candidate data ingestion, normalization, and merging platform built as part of the Eightfold Engineering Intern assignment. 
+A production-grade candidate data ingestion, normalization, and merging platform built as part of the Eightfold Engineering Intern assignment.
 
-The system ingests, normalizes, matches candidate profiles, resolves merge conflicts using a configurable attribute-level priority engine, tracks value lineage (provenance), and projects custom output shapes dynamically at runtime using a JSON configuration file.
+The system ingests, normalizes, and matches candidate profiles from multiple structured and unstructured sources. It resolves merge conflicts using a configurable attribute-level priority engine, tracks value lineage (provenance), and generates a unified canonical candidate profile.
+
+The **Candidate Intelligence Engine** is a production-style AI engineering system that consolidates fragmented candidate information into a single validated canonical profile. It also supports runtime-configurable output projection using JSON/YAML configuration files, enabling dynamic reshaping of the final output without modifying core application logic.
+
+```
+The system follows a deterministic and explainable pipeline:
+
+- Source Detection
+- Data Extraction
+- Normalization
+- Canonicalization
+- Entity Resolution
+- Conflict Resolution
+- Confidence Scoring
+- Provenance Tracking
+- Runtime Projection
+- Pydantic Validation
+```
+
+The final output is a **configurable JSON profile** generated without modifying application code.
 
 ---
 
-## 🚀 Key Features
+## Features
 
-* **Ports & Adapters Architecture**: Clean separation between data sources (adapters), extraction models (parsers), core normalization, and output formatting (projections).
-* **Heterogeneous Ingestion**: Out-of-the-box support for:
-  * **Structured Sources**: Recruiter CSV exports, ATS JSON blobs.
-  * **Unstructured Sources**: PDF Resumes, Word (.docx) Resumes, Recruiter Notes (.txt).
-* **Deterministic Identity Resolution**: Matches candidates automatically by hashing and checking overlap of primary identifiers (emails, phone numbers).
-* **Attribute-Level Provenance & Merging**: Merges candidate profiles field-by-field. Conflict resolution follows a hierarchy: **Source Priority** (configured via JSON) $\rightarrow$ **Extraction Confidence** $\rightarrow$ **Recency (Timestamp)**.
-* **Configurable Projection Engine**: Runtime JSON config shapes the output without modifying source code (supports field remapping, subset selection, output-time anonymization, and missing-value fallbacks).
-* **Industrial Validation**: Uses Pydantic v2 for strict type safety and business validation.
+### Supported Input Sources
+
+**Structured Sources**
+- Recruiter CSV
+- ATS JSON
+
+**Unstructured Sources**
+- Resume (PDF)
+- Resume (DOCX)
+- Recruiter Notes (TXT)
+- GitHub Profile URL (optional)
 
 ---
 
-## 📂 Project Structure
+## Processing Pipeline
 
-```text
-resume_parser/
-├── config/
-│   ├── default_projection.json    # Default full candidate schema configuration
-│   └── custom_projection.json     # Custom subset and remapped configuration
-├── src/
-│   ├── __init__.py
-│   ├── main.py                    # Pipeline Orchestrator and CLI Entrypoint
-│   ├── adapters/                  # Ingestion Layer (loads files and extracts raw text)
-│   │   ├── base.py
-│   │   ├── csv_adapter.py
-│   │   ├── json_adapter.py
-│   │   ├── pdf_adapter.py
-│   │   ├── docx_adapter.py
-│   │   └── notes_adapter.py
-│   ├── parser/                    # Parsing Layer (extracts raw fields from source text)
-│   │   ├── base.py
-│   │   ├── structured_parser.py
-│   │   └── text_parser.py
-│   ├── normalizers/               # Cleaning Layer (E.164 phones, YYYY-MM dates, title case)
-│   │   ├── __init__.py
-│   │   └── normalizer.py
-│   ├── models/                    # Data models (Canonical schema & provenance wrappers)
-│   │   ├── __init__.py
-│   │   └── canonical.py
-│   ├── identity/                  # Entity matching layer (deterministic hashing)
-│   │   ├── __init__.py
-│   │   └── resolver.py
-│   ├── merge/                     # Merge & Conflict resolution engine
-│   │   ├── __init__.py
-│   │   └── engine.py
-│   ├── projection/                # Output projection engine (runtime configurable mapping)
-│   │   ├── __init__.py
-│   │   └── engine.py
-│   └── utils/
-│       └── pdf_generator.py       # Compiled PDF design document generator
-├── tests/                         # Unit and integration test suites
-│   ├── test_normalizers.py
-│   ├── test_merge.py
-│   ├── test_projection.py
-│   └── test_pipeline.py
-├── requirements.txt               # Dependencies
-├── demo.py                        # Automated demonstration runner
-├── generate_pdf.py                # Compiles the 1-page Design Document
-└── Kaviyadharshini_M_kaviyadharshini.works@gmail.com_Eightfold.pdf # Compiled design PDF
+```
+Source Detection
+→ Data Extraction
+→ Normalization
+→ Canonicalization
+→ Entity Resolution
+→ Conflict Resolution
+→ Confidence Scoring
+→ Provenance Tracking
+→ Projection Layer
+→ Pydantic Validation
+→ Final JSON Output
 ```
 
 ---
 
-## 🛠️ Setup & Execution
+## Core Capabilities
 
-### 1. Prerequisites
-Ensure Python 3.10+ is installed.
+- Multi-source candidate ingestion
+- Resume parsing
+- CSV & ATS JSON processing
+- Deterministic merge engine
+- Configurable source priority
+- Field normalization
+- Entity resolution
+- Conflict resolution
+- Canonical candidate profile generation
+- Field-level provenance tracking
+- Confidence scoring
+- Runtime configurable projection
+- Explainable decision-making
+- FastAPI REST backend
+- Streamlit dashboard
 
-### 2. Install Dependencies
-Set up a virtual environment and install the required libraries:
+---
+
+## Technology Stack
+
+### Backend
+- Python
+- FastAPI
+- Pydantic
+- Pandas
+- PyMuPDF
+- python-docx
+- YAML / JSON
+
+### Frontend
+- Streamlit
+- Plotly
+- Custom CSS
+
+### Testing
+- PyTest
+
+---
+
+## Project Structure
+
+```
+candidate-ai-engine/
+├── backend/
+│   ├── app/
+│   │   ├── canonicalizers/
+│   │   ├── extractors/
+│   │   ├── merge_engine/
+│   │   ├── normalizers/
+│   │   ├── projection/
+│   │   ├── schemas/
+│   │   └── main.py
+│
+├── frontend/
+│   └── streamlit/
+│       └── dashboard.py
+│
+├── sample_data/
+├── tests/
+├── requirements.txt
+├── config.toml
+└── README.md
+```
+
+---
+
+## Internal Canonical Profile
+
+```json
+{
+  "full_name": "Example Name",
+  "emails": ["example@gmail.com"],
+  "phones": ["+91XXXXXXXXXX"],
+  "skills": [
+    "Python",
+    "SQL",
+    "FastAPI",
+    "Machine Learning"
+  ],
+  "location": {
+    "city": "Chennai",
+    "region": "Tamil Nadu",
+    "country": "IN"
+  },
+  "overall_confidence": 0.92,
+  "field_provenance": {
+    "email": {
+      "source": "ATS",
+      "confidence": 0.95
+    }
+  }
+}
+```
+
+---
+
+## Runtime Configurable Projection
+
+The internal model remains unchanged while output is dynamically reshaped using YAML/JSON configuration.
+
+### Example Configuration
+
+```yaml
+fields:
+  - path: candidate_full_name
+    from: full_name
+
+  - path: primary_contact_email
+    from: emails[0]
+
+  - path: verified_phone
+    from: phones[0]
+
+include_provenance: false
+include_confidence: false
+on_missing: omit
+```
+
+### Output Example
+
+```json
+{
+  "candidate_full_name": "Example Name",
+  "primary_contact_email": "example@gmail.com",
+  "verified_phone": "+91XXXXXXXXXX"
+}
+```
+
+---
+
+## Dashboard Features
+
+- File upload & processing
+- Pipeline execution visualization
+- Canonical profile viewer
+- Projected JSON viewer
+- AI insights panel
+- Confidence scoring summary
+- Source comparison view
+- Configuration editor
+- JSON & PDF export
+- Light/Dark mode toggle
+
+---
+
+## Validation
+
+All outputs are validated using Pydantic:
+
+- Required field validation
+- Data type validation
+- Email format validation
+- Phone format validation
+- Country code validation
+- JSON schema validation
+
+---
+
+## Testing
+
 ```bash
-python -m venv venv
-venv\Scripts\activate      # On Windows (use source venv/bin/activate on Unix)
+pytest
+```
+
+### Test Coverage
+
+- Data extraction
+- Normalization
+- Merge engine
+- Entity resolution
+- Projection layer
+- Validation
+- API endpoints
+
+---
+
+## Assumptions
+
+- Input data is partially structured
+- Email/phone are primary identity keys
+- Rule-based deterministic conflict resolution
+- In-memory processing without database
+
+---
+
+## Descoped Features
+
+- No real-time LinkedIn scraping
+- No cloud database integration
+- No ML training pipeline
+- No distributed system architecture
+
+---
+
+## Running the Project
+
+```bash
+git clone https://github.com/kaviyadharshini2805/Candidate-Intelligence-Engine.git
+cd Candidate-Intelligence-Engine
 pip install -r requirements.txt
-```
-
-### 3. Run the Demonstration
-Run the automated demo script, which creates mock CSV/Notes files, runs both default and custom configurations, and prints the outputs to stdout:
-```bash
-python demo.py
-```
-
-### 4. Run the Pipeline CLI
-Ingest custom files by calling the main entrypoint:
-```bash
-python src/main.py -i <path_to_file1> <path_to_file2> -c config/default_projection.json -o output/result.json
+streamlit run app.py
 ```
 
 ---
 
-## 🧪 Running Tests
+## Design Principles
 
-We achieve high reliability using `pytest` for unit and integration testing. Run the full test suite with:
-```bash
-python -m pytest tests/
-```
+- Clean Architecture
+- SOLID Principles
+- Modular Design
+- Deterministic Processing
+- Explainable Systems
+- Configuration-Driven Development
+- Production-Oriented Engineering
 
 ---
 
-## 📝 Design One-Pager (Deliverable)
+## Learning Outcomes
 
-The assignment requires a one-page design document PDF outlining pipeline workflows, normalization choices, and edge cases.
-* **Location**: [Kaviyadharshini_M_kaviyadharshini.works@gmail.com_Eightfold.pdf](file:///E:/Projects/Resume%20Parser/Kaviyadharshini_M_kaviyadharshini.works@gmail.com_Eightfold.pdf)
-* **Re-compile**: If you want to re-compile this PDF, run:
-  ```bash
-  python generate_pdf.py
-  ```
+This project demonstrates experience in:
+
+- AI Engineering pipelines
+- Data Engineering systems
+- Resume parsing & extraction
+- Entity resolution
+- Conflict resolution systems
+- Backend API development
+- Streamlit dashboard development
+- Explainable AI design
+
+---
+
+## Author
+
+**Kaviyadharshini**
+
+- Email: kaviyadharshini.works@gmail.com
+- GitHub: https://github.com/kaviyadharshini2805
+- LinkedIn: https://www.linkedin.com/in/kaviyadharshini-works
