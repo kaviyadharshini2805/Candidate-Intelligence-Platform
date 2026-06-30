@@ -330,12 +330,6 @@ Produces:
 - [x] Entity resolution
 - [x] Provenance tracking
 - [x] Runtime-configurable projection
-- [ ] Authentication & user accounts
-- [ ] Docker support
-- [ ] Kubernetes deployment manifests
-- [ ] PostgreSQL persistence layer
-- [ ] Redis caching for repeated lookups
-
 ---
 
 ##  Performance
