@@ -31,24 +31,30 @@
 
 ##  Table of Contents
 
-- [About the Project](#-about-the-project)
-- [Architecture](#-architecture)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Folder Structure](#-folder-structure)
-- [Processing Pipeline](#-processing-pipeline)
-- [Screenshots](#-screenshots)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Example Output](#-example-output)
-- [Configurable Projection](#-configurable-projection)
-- [Dashboard Features](#-dashboard-features)
-- [Roadmap](#-roadmap)
-- [Performance](#-performance)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
-
+- About the Project
+- Architecture
+- Features
+- Tech Stack
+- Folder Structure
+- Processing Pipeline
+- Screenshots
+- Installation
+- Usage
+- Example Output
+- Configurable Projection
+- Dashboard Features
+- Confidence Scoring
+- Provenance Tracking
+- Validation & Error Handling
+- Testing
+- Performance
+- Future Improvements
+- Roadmap
+- Contributing
+- License
+- Author
+- Acknowledgements
+  
 ---
 
 ##  About the Project
