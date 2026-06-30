@@ -182,7 +182,7 @@ flowchart LR
 # 1) Candidate Data Input Dashboard
 <img width="1918" height="976" alt="image" src="https://github.com/user-attachments/assets/b2239fdf-f321-4065-92d1-33aaba92fcd1" />
 
-# 2) Golden Candidate Profile (Default Output)
+# 2) Golden Candidate Profile
 <img width="1920" height="976" alt="image" src="https://github.com/user-attachments/assets/1d586114-8e04-4497-bb5a-ab516bd26cbe" />
 
 # 3) Sample Output
