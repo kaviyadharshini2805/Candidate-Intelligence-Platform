@@ -1,0 +1,299 @@
+[
+  {
+    "candidate_id": "f2b94551-6505-4958-993d-2e08c2fc845d",
+    "full_name": "Kaviyadharshini M",
+    "emails": [
+      "kaviyadharshini.works@gmail.com"
+    ],
+    "phones": [
+      "+918270849088"
+    ],
+    "location": [
+      null,
+      null,
+      null
+    ],
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/kaviyadharshini-works",
+      "github": "https://github.com/kaviyadharshini2805",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "JavaScript",
+        "confidence": 0.6,
+        "sources": [
+          "recruiter_notes.txt"
+        ]
+      },
+      {
+        "name": "Data Science",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "Machine Learning",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "PostgreSQL",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "Python",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "CSS",
+        "confidence": 0.6,
+        "sources": [
+          "recruiter_notes.txt"
+        ]
+      },
+      {
+        "name": "Git",
+        "confidence": 0.6,
+        "sources": [
+          "recruiter_notes.txt"
+        ]
+      },
+      {
+        "name": "HTML",
+        "confidence": 0.6,
+        "sources": [
+          "recruiter_notes.txt"
+        ]
+      },
+      {
+        "name": "Pandas",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "NumPy",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "SQL",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "Java",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "MySQL",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "Computer Vision",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      },
+      {
+        "name": "AWS",
+        "confidence": 0.6,
+        "sources": [
+          "KAVIYADHARSHINI M - SE.pdf"
+        ]
+      }
+    ],
+    "experience": [],
+    "education": [
+      {
+        "institution": "Higher Secondary School 2022 – 2023",
+        "degree": "B.E",
+        "field": "Computer Science and Engineering",
+        "end_year": 2023
+      }
+    ],
+    "provenance": [
+      {
+        "field": "full_name",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Single source populated",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "emails",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Recency tie-breaker (incoming newer)",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "phones",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Recency tie-breaker (incoming newer)",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "links.linkedin",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Single source populated",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "links.github",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Single source populated",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "education.institution",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "education.degree",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "education.field",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "education.end_year",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": null,
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "skills",
+        "source": "recruiter_notes.txt",
+        "method": "regex_heuristics",
+        "decision_reason": "Initial profile value",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "skills",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Recency tie-breaker (incoming newer)",
+        "match_type": null,
+        "confidence_score": null
+      },
+      {
+        "field": "skills",
+        "source": "KAVIYADHARSHINI M - SE.pdf",
+        "method": "regex_heuristics",
+        "decision_reason": "Single source populated",
+        "match_type": null,
+        "confidence_score": null
+      }
+    ],
+    "overall_confidence": 0.6,
+    "validation_warnings": [],
+    "data_quality_score": 0.75,
+    "merge_conflicts": [],
+    "parse_diagnostics": [
+      {
+        "source_name": "recruiter_notes.txt",
+        "content_type": "txt",
+        "parse_time_ms": 7.0,
+        "emails_found": 1,
+        "phones_found": 1,
+        "skills_found": 11,
+        "experience_count": 0,
+        "education_count": 0,
+        "links_found": 0,
+        "has_name": false,
+        "has_headline": false,
+        "sections_found": [
+          "emails",
+          "phones",
+          "skills"
+        ],
+        "sections_missing": [
+          "name",
+          "experience",
+          "education",
+          "links",
+          "headline"
+        ],
+        "parser_confidence": 0.6,
+        "error": null
+      },
+      {
+        "source_name": "KAVIYADHARSHINI M - SE.pdf",
+        "content_type": "pdf",
+        "parse_time_ms": 315.04,
+        "emails_found": 1,
+        "phones_found": 1,
+        "skills_found": 11,
+        "experience_count": 0,
+        "education_count": 1,
+        "links_found": 2,
+        "has_name": true,
+        "has_headline": false,
+        "sections_found": [
+          "emails",
+          "phones",
+          "skills",
+          "education",
+          "links"
+        ],
+        "sections_missing": [
+          "name",
+          "experience",
+          "headline"
+        ],
+        "parser_confidence": 0.6,
+        "error": null
+      }
+    ]
+  }
+]

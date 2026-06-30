@@ -1,0 +1,13 @@
+Candidate Name: Kaviyadharshini M
+Contact: kaviyadharshini.works@gmail.com
+GitHub: https://github.com/kaviyadharshini2805
+LinkedIn: https://linkedin.com/in/kaviyadharshini-m
+Headline: Aspiring Data Scientist and AI Engineer. Passionate about LLMs and system architectures.
+Skills learned: Python, Java, SQL, Machine Learning, TensorFlow, AWS, FastAPI, Pytest
+Work History:
+Google - Software Intern | Jan 2026 - Present
+Working on deep learning systems and pot-hole verification pipelines using YOLOv8.
+
+Education:
+Rathinam Technical Campus
+Bachelor of Engineering in Computer Science | 2023 - 2027
