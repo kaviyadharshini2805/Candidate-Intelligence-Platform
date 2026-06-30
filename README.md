@@ -1,27 +1,10 @@
-# Multi-Source Candidate Data Transformer
+# Candidate Intelligence Engine
 
 A production-grade candidate data ingestion, normalization, and merging platform built as part of the Eightfold Engineering Intern assignment.
 
 The system ingests, normalizes, and matches candidate profiles from multiple structured and unstructured sources. It resolves merge conflicts using a configurable attribute-level priority engine, tracks value lineage (provenance), and generates a unified canonical candidate profile.
 
 The **Candidate Intelligence Engine** is a production-style AI engineering system that consolidates fragmented candidate information into a single validated canonical profile. It also supports runtime-configurable output projection using JSON/YAML configuration files, enabling dynamic reshaping of the final output without modifying core application logic.
-
-```
-The system follows a deterministic and explainable pipeline:
-
-- Source Detection
-- Data Extraction
-- Normalization
-- Canonicalization
-- Entity Resolution
-- Conflict Resolution
-- Confidence Scoring
-- Provenance Tracking
-- Runtime Projection
-- Pydantic Validation
-```
-
-The final output is a **configurable JSON profile** generated without modifying application code.
 
 ---
 
@@ -39,27 +22,7 @@ The final output is a **configurable JSON profile** generated without modifying 
 - Recruiter Notes (TXT)
 - GitHub Profile URL (optional)
 
----
-
-## Processing Pipeline
-
-```
-Source Detection
-→ Data Extraction
-→ Normalization
-→ Canonicalization
-→ Entity Resolution
-→ Conflict Resolution
-→ Confidence Scoring
-→ Provenance Tracking
-→ Projection Layer
-→ Pydantic Validation
-→ Final JSON Output
-```
-
----
-
-## Core Capabilities
+### Core Capabilities
 
 - Multi-source candidate ingestion
 - Resume parsing
@@ -127,7 +90,100 @@ candidate-ai-engine/
 
 ---
 
+## Processing Pipeline
+
+The system follows a deterministic and explainable pipeline:
+
+```
+Source Detection
+→ Data Extraction
+→ Normalization
+→ Canonicalization
+→ Entity Resolution
+→ Conflict Resolution
+→ Confidence Scoring
+→ Provenance Tracking
+→ Projection Layer
+→ Pydantic Validation
+→ Final JSON Output
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- pip package manager
+- Virtual environment (recommended)
+
+### Installation & Setup
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/kaviyadharshini2805/Candidate-Intelligence-Platform.git
+```
+
+#### 2. Navigate to Project Folder
+
+```bash
+cd Candidate-Intelligence-Platform
+```
+
+#### 3. Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+```
+
+**Activate the Virtual Environment:**
+
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+**Mac/Linux:**
+```bash
+source venv/bin/activate
+```
+
+#### 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 5. Run the Application
+
+**Start the Streamlit Dashboard:**
+```bash
+streamlit run app.py
+```
+
+The application will open in your default web browser at `http://localhost:8501`
+
+#### 6. Run Tests
+
+```bash
+pytest tests/
+```
+
+#### 7. View Output
+
+- Upload input files in the Streamlit UI
+- Or check sample results in:
+```
+sample_output/output.json
+```
+
+---
+
 ## Internal Canonical Profile
+
+The system generates a unified canonical profile with the following structure:
 
 ```json
 {
@@ -159,7 +215,7 @@ candidate-ai-engine/
 
 ## Runtime Configurable Projection
 
-The internal model remains unchanged while output is dynamically reshaped using YAML/JSON configuration.
+The internal model remains unchanged while output is dynamically reshaped using YAML/JSON configuration files. This enables dynamic reshaping of the final output without modifying core application logic.
 
 ### Example Configuration
 
@@ -208,7 +264,7 @@ on_missing: omit
 
 ## Validation
 
-All outputs are validated using Pydantic:
+All outputs are validated using Pydantic to ensure data integrity:
 
 - Required field validation
 - Data type validation
@@ -220,6 +276,8 @@ All outputs are validated using Pydantic:
 ---
 
 ## Testing
+
+Run the test suite to verify functionality:
 
 ```bash
 pytest
@@ -237,35 +295,6 @@ pytest
 
 ---
 
-## Assumptions
-
-- Input data is partially structured
-- Email/phone are primary identity keys
-- Rule-based deterministic conflict resolution
-- In-memory processing without database
-
----
-
-## Descoped Features
-
-- No real-time LinkedIn scraping
-- No cloud database integration
-- No ML training pipeline
-- No distributed system architecture
-
----
-
-## Running the Project
-
-```bash
-git clone https://github.com/kaviyadharshini2805/Candidate-Intelligence-Engine.git
-cd Candidate-Intelligence-Engine
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-
 ## Design Principles
 
 - Clean Architecture
@@ -278,15 +307,51 @@ streamlit run app.py
 
 ---
 
+## Assumptions
+
+- Input data is partially structured
+- Email/phone are primary identity keys
+- Rule-based deterministic conflict resolution
+- In-memory processing without database
+
+---
+
+## Descoped Features
+
+The following features were intentionally not implemented in this version:
+
+- No real-time LinkedIn scraping
+- No cloud database integration
+- No ML training pipeline
+- No distributed system architecture
+
+---
+
 ## Live Demo
+
+Try the live application here:
 ```
 https://candidate-intelligence-platform-nth6plavdpzorspnfpyxtr.streamlit.app/
 ```
+
+---
 
 ## Author
 
 **Kaviyadharshini**
 
-- Email: kaviyadharshini.works@gmail.com
-- GitHub: https://github.com/kaviyadharshini2805
-- LinkedIn: https://www.linkedin.com/in/kaviyadharshini-works
+- Email: [kaviyadharshini.works@gmail.com](mailto:kaviyadharshini.works@gmail.com)
+- GitHub: [https://github.com/kaviyadharshini2805](https://github.com/kaviyadharshini2805)
+- LinkedIn: [https://www.linkedin.com/in/kaviyadharshini-works](https://www.linkedin.com/in/kaviyadharshini-works)
+
+---
+
+## License
+
+This project is part of the Eightfold Engineering Intern assignment.
+
+---
+
+## Support
+
+For issues, questions, or contributions, please reach out via the contact information above or open an issue on GitHub.
