@@ -278,20 +278,10 @@ streamlit run app.py
 
 ---
 
-## Learning Outcomes
-
-This project demonstrates experience in:
-
-- AI Engineering pipelines
-- Data Engineering systems
-- Resume parsing & extraction
-- Entity resolution
-- Conflict resolution systems
-- Backend API development
-- Streamlit dashboard development
-- Explainable AI design
-
----
+## Live Demo
+```
+https://candidate-intelligence-platform-nth6plavdpzorspnfpyxtr.streamlit.app/
+```
 
 ## Author
 
