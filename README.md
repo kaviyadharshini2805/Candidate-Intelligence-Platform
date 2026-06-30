@@ -27,9 +27,6 @@
   <img src="assets/banner.png" alt="Candidate Intelligence Platform banner" width="100%" />
 </p>
 
-> [!TIP]
-> Add a banner at `assets/banner.png` — a 1280×400 px wide image works well. Good royalty-free options: an [Unsplash](https://unsplash.com/s/photos/data-pipeline) data/network photo, a [Storyset](https://storyset.com/) "data processing" illustration, or an [Icons8](https://icons8.com/illustrations) flat-style AI/recruiting illustration. Keep it dark-on-light or use a gradient overlay so the title text below it stays readable.
-
 ---
 
 ##  Table of Contents
